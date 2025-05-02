@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Palette Preview</title>
+  <link href="https://fonts.googleapis.com/css2?family=Figtree:wght@400;700&display=swap" rel="stylesheet">
+  <style>
+    body {
+      background: #111;
+      color: #fff;
+      font-family: 'Figtree', sans-serif;
+      padding: 2rem;
+      display: flex;
+      justify-content: center;
+    }
+    table {
+      border-collapse: separate;
+      border-spacing: 10px;
+      max-width: 900px;
+      width: auto;
+    }
+    th.col-label {
+      text-align: center;
+      font-weight: 500;
+      font-size: 0.75rem;
+      padding: 0.25rem;
+    }
+    th.row-label {
+      text-align: right;
+      padding-right: 1rem;
+      font-weight: 600;
+      font-size: 0.9rem;
+      white-space: nowrap;
+    }
+    td {
+      padding: 0;
+    }
+    .swatch {
+      width: 40px;
+      height: 40px;
+      border-radius: 6px;
+      box-shadow: 0 1px 3px rgba(0, 0, 0, 0.3);
+    }
+  </style>
+</head>
+<body>
+  <table>
+    <thead>
+      <tr>
+        <th></th>
+        <th class="col-label">50</th><th class="col-label">100</th><th class="col-label">200</th><th class="col-label">300</th><th class="col-label">400</th><th class="col-label">500</th><th class="col-label">600</th><th class="col-label">700</th><th class="col-label">800</th><th class="col-label">900</th><th class="col-label">950</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr><th class="row-label">red</th><td><div class="swatch" style="background:#ffede7;"></div></td><td><div class="swatch" style="background:#ffdcd2;"></div></td><td><div class="swatch" style="background:#ffb6a8;"></div></td><td><div class="swatch" style="background:#ff8f7f;"></div></td><td><div class="swatch" style="background:#f0685d;"></div></td><td><div class="swatch" style="background:#d33333;"></div></td><td><div class="swatch" style="background:#a21921;"></div></td><td><div class="swatch" style="background:#7b0716;"></div></td><td><div class="swatch" style="background:#58000c;"></div></td><td><div class="swatch" style="background:#380005;"></div></td><td><div class="swatch" style="background:#290002;"></div></td></tr>
+<tr><th class="row-label">orange</th><td><div class="swatch" style="background:#fff;"></div></td><td><div class="swatch" style="background:#fff;"></div></td><td><div class="swatch" style="background:#ffdfca;"></div></td><td><div class="swatch" style="background:#ffb994;"></div></td><td><div class="swatch" style="background:#ff8b55;"></div></td><td><div class="swatch" style="background:#eb5d12;"></div></td><td><div class="swatch" style="background:#ba4304;"></div></td><td><div class="swatch" style="background:#933105;"></div></td><td><div class="swatch" style="background:#6f2306;"></div></td><td><div class="swatch" style="background:#4f1605;"></div></td><td><div class="swatch" style="background:#401105;"></div></td></tr>
+<tr><th class="row-label">neutral</th><td><div class="swatch" style="background:#f0f0f0;"></div></td><td><div class="swatch" style="background:#e4e4e4;"></div></td><td><div class="swatch" style="background:#cacaca;"></div></td><td><div class="swatch" style="background:#b0b0b0;"></div></td><td><div class="swatch" style="background:#949494;"></div></td><td><div class="swatch" style="background:#737373;"></div></td><td><div class="swatch" style="background:#545454;"></div></td><td><div class="swatch" style="background:#3c3c3c;"></div></td><td><div class="swatch" style="background:#272727;"></div></td><td><div class="swatch" style="background:#151515;"></div></td><td><div class="swatch" style="background:#0c0c0c;"></div></td></tr>
+<tr><th class="row-label">white</th><td><div class="swatch" style="background:#fff;"></div></td><td><div class="swatch" style="background:#fff;"></div></td><td><div class="swatch" style="background:#fff;"></div></td><td><div class="swatch" style="background:#fff;"></div></td><td><div class="swatch" style="background:#fff;"></div></td><td><div class="swatch" style="background:#fff;"></div></td><td><div class="swatch" style="background:#dadada;"></div></td><td><div class="swatch" style="background:#bdbdbd;"></div></td><td><div class="swatch" style="background:#a3a3a3;"></div></td><td><div class="swatch" style="background:#8b8b8b;"></div></td><td><div class="swatch" style="background:#808080;"></div></td></tr>
+<tr><th class="row-label">black</th><td><div class="swatch" style="background:#484848;"></div></td><td><div class="swatch" style="background:#3d3d3d;"></div></td><td><div class="swatch" style="background:#2a2a2a;"></div></td><td><div class="swatch" style="background:#161616;"></div></td><td><div class="swatch" style="background:#050505;"></div></td><td><div class="swatch" style="background:#000;"></div></td><td><div class="swatch" style="background:#000;"></div></td><td><div class="swatch" style="background:#000;"></div></td><td><div class="swatch" style="background:#000;"></div></td><td><div class="swatch" style="background:#000;"></div></td><td><div class="swatch" style="background:#000;"></div></td></tr>
+<tr><th class="row-label">html</th><td><div class="swatch" style="background:#fff;"></div></td><td><div class="swatch" style="background:#ffefe4;"></div></td><td><div class="swatch" style="background:#ffcbb5;"></div></td><td><div class="swatch" style="background:#ffa182;"></div></td><td><div class="swatch" style="background:#fa7b58;"></div></td><td><div class="swatch" style="background:#dd4b25;"></div></td><td><div class="swatch" style="background:#ac3215;"></div></td><td><div class="swatch" style="background:#85210e;"></div></td><td><div class="swatch" style="background:#621308;"></div></td><td><div class="swatch" style="background:#420804;"></div></td><td><div class="swatch" style="background:#340503;"></div></td></tr>
+<tr><th class="row-label">scss</th><td><div class="swatch" style="background:#fff;"></div></td><td><div class="swatch" style="background:#fff;"></div></td><td><div class="swatch" style="background:#ffdbf1;"></div></td><td><div class="swatch" style="background:#ffb3da;"></div></td><td><div class="swatch" style="background:#f090bf;"></div></td><td><div class="swatch" style="background:#d2679e;"></div></td><td><div class="swatch" style="background:#a54d7b;"></div></td><td><div class="swatch" style="background:#823a5f;"></div></td><td><div class="swatch" style="background:#622a47;"></div></td><td><div class="swatch" style="background:#451c31;"></div></td><td><div class="swatch" style="background:#381627;"></div></td></tr>
+<tr><th class="row-label">js</th><td><div class="swatch" style="background:#fff;"></div></td><td><div class="swatch" style="background:#fff;"></div></td><td><div class="swatch" style="background:#ffffae;"></div></td><td><div class="swatch" style="background:#fff;"></div></td><td><div class="swatch" style="background:#fff;"></div></td><td><div class="swatch" style="background:#f7e025;"></div></td><td><div class="swatch" style="background:#d2ba1f;"></div></td><td><div class="swatch" style="background:#b59d26;"></div></td><td><div class="swatch" style="background:#99832b;"></div></td><td><div class="swatch" style="background:#7f6c2e;"></div></td><td><div class="swatch" style="background:#72612f;"></div></td></tr>
+<tr><th class="row-label">liquidjs</th><td><div class="swatch" style="background:#ecffff;"></div></td><td><div class="swatch" style="background:#d3f4ff;"></div></td><td><div class="swatch" style="background:#a3ddff;"></div></td><td><div class="swatch" style="background:#7cc3fa;"></div></td><td><div class="swatch" style="background:#52a6e7;"></div></td><td><div class="swatch" style="background:#0e83cd;"></div></td><td><div class="swatch" style="background:#00619f;"></div></td><td><div class="swatch" style="background:#00477a;"></div></td><td><div class="swatch" style="background:#003159;"></div></td><td><div class="swatch" style="background:#001d3a;"></div></td><td><div class="swatch" style="background:#00142c;"></div></td></tr>
+<tr><th class="row-label">expressjs</th><td><div class="swatch" style="background:#fff;"></div></td><td><div class="swatch" style="background:#fff;"></div></td><td><div class="swatch" style="background:#fff;"></div></td><td><div class="swatch" style="background:#fff;"></div></td><td><div class="swatch" style="background:#fff;"></div></td><td><div class="swatch" style="background:#fff;"></div></td><td><div class="swatch" style="background:#dadada;"></div></td><td><div class="swatch" style="background:#bdbdbd;"></div></td><td><div class="swatch" style="background:#a3a3a3;"></div></td><td><div class="swatch" style="background:#8b8b8b;"></div></td><td><div class="swatch" style="background:#808080;"></div></td></tr>
+<tr><th class="row-label">nodejs</th><td><div class="swatch" style="background:#fff;"></div></td><td><div class="swatch" style="background:#fff;"></div></td><td><div class="swatch" style="background:#d5fdd2;"></div></td><td><div class="swatch" style="background:#b6e4b0;"></div></td><td><div class="swatch" style="background:#95c98b;"></div></td><td><div class="swatch" style="background:#6fa760;"></div></td><td><div class="swatch" style="background:#568246;"></div></td><td><div class="swatch" style="background:#446634;"></div></td><td><div class="swatch" style="background:#334d26;"></div></td><td><div class="swatch" style="background:#253619;"></div></td><td><div class="swatch" style="background:#1e2c13;"></div></td></tr>
+<tr><th class="row-label">mongodb</th><td><div class="swatch" style="background:#fff;"></div></td><td><div class="swatch" style="background:#d8ffde;"></div></td><td><div class="swatch" style="background:#b6efbc;"></div></td><td><div class="swatch" style="background:#93d698;"></div></td><td><div class="swatch" style="background:#6fbc72;"></div></td><td><div class="swatch" style="background:#439b44;"></div></td><td><div class="swatch" style="background:#2f762c;"></div></td><td><div class="swatch" style="background:#235a1b;"></div></td><td><div class="swatch" style="background:#18400e;"></div></td><td><div class="swatch" style="background:#0f2a05;"></div></td><td><div class="swatch" style="background:#0a2002;"></div></td></tr>
+    </tbody>
+  </table>
+</body>
+</html>
