@@ -136,6 +136,15 @@
     --text-font: 'DM Sans', sans-serif;
 }
 
+::-webkit-scrollbar {
+    width:0;
+    height: 0.5rem;
+}
+::-webkit-scrollbar-thumb {
+    background-color: var(--neutral-300);
+    border-radius: 0.5rem;
+}
+
 * {
     box-sizing: border-box;
 }
@@ -265,7 +274,7 @@ section {
     }
 
     &[data-lang="nodejs"] {
-        background-color: var(--nodejs-100);
+        background-color: var(--nodejs-200);
         color: var(--nodejs-500);
     }
 
