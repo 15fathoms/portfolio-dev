@@ -151,6 +151,10 @@
 
 html {
     scroll-behavior: smooth;
+    font-size: 80%;
+    @media screen and (min-width: 768px) {
+        font-size: 100%;
+    }
 }
 
 body {
@@ -241,10 +245,10 @@ section {
     border-radius: 2000px;
     box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
 
-    h3 {
+    h4 {
         margin: 0;
-        font-size: 1.2rem;
-        font-weight: 400;
+        font-size: 1rem;
+        font-weight: 300;
         text-align: center;
     }
 

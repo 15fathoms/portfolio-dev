@@ -146,3 +146,103 @@ function initSlider(slider) {
 }
 
 initSlider(slider);
+
+// projects
+
+class Project {
+    constructor(name, description, image, video, stack, openSource, asContributor, year, links) {
+        this.name = name ? name : null;
+        this.description = description ? description : null;
+        this.image = image ? image : null;
+        this.video = video ? video : null;
+        this.stack = stack?.split(',').map((item) => item.trim());
+        this.openSource = openSource;
+        this.asContributor = asContributor;
+        this.year = year ? year : null;
+        this.links = links?.split(',').map((item) => item.trim()) || links;
+        this.github = this.links.find((link) => link.includes('github.com'));
+        this.npm = this.links.find((link) => link.includes('npmjs.com'));
+    }
+}
+
+const projects = [
+    new Project(
+        'Tonal CLI',
+        'Smart color palette generator – CSS, SCSS, LESS, Stylus, JS, OKLCH-ready',
+        null,
+        null,
+        'Node.js, Javascript',
+        true,
+        false,
+        2025,
+        'https://github.com/15fathoms/Tonal, https://www.npmjs.com/package/tonal-kit'
+    ),
+    new Project(
+        'Tailwind Colors',
+        'A collection of Tailwind CSS color tokens exported in HEX, RGBA, and OKLCH — ready to use with CSS, SCSS, LESS, and Stylus. 🎨 Perfect for designers & developers who want access to Tailwind’s palette in different workflows.',
+        'image2.jpg',
+        'video2.mp4',
+        'Node.js, Javascript',
+        true,
+        false,
+        2025,
+        'https://github.com/15fathoms/tailwind-colors, https://15fathoms.github.io/tailwind-colors/'
+    ),
+    new Project(
+        'express-list-routes',
+        'List all routes used in Express[3,4,5]',
+        null,
+        null,
+        'Javascript, Typescript',
+        true,
+        true,
+        2024,
+        'https://github.com/labithiotis/express-list-routes, https://github.com/labithiotis/express-list-routes/pull/24'
+    ),
+    new Project(
+        'Completor',
+        "Completor is a VS Code extension that bridges your development workflow with locally installed AI models. It enables you to interact with your AI directly from the editor, offering a seamless and efficient way to integrate AI-powered assistance into your coding process.",
+        'https://github.com/15fathoms/completor/raw/main/images/code-in-input.png',
+        null,
+        'Ollama, TypeScript, Node.js',
+        true,
+        false,
+        2025,
+        'https://github.com/15fathoms/completor'
+    ),
+    new Project(
+        'TraducThor',
+        'TraducThor is an Express server that provides real-time translation services for streamers. It listens to the microphone and translates the spoken words into text, wich are translated into English with Google Translate API. The translated text is then sent to OBS via WebSocket.',
+        null,
+        null,
+        'Node.js, Javascript',
+        true,
+        false,
+        2025,
+        'https://github.com/15fathoms/TraducThor'
+    ),
+    new Project(
+        'Obrist',
+        'Wine reseller and distributor in Switzerland. I created a custom e-commerce website for them using Shopify and by creating a custom theme with Liquid.',
+        'imgs\obrist.png',
+        null,
+        'Shopify, Liquid, Javascript, SCSS',
+        false,
+        false,
+        2024,
+        'https://thewinefamily.ch/',
+    ),
+    new Project(
+        'Baobab Collection',
+        'Baobab Collection is a luxury home fragrance brand. I created a custom e-commerce website for them using Shopify and by creating a custom theme with Liquid.',
+        'imgs\baobab.png',
+        null,
+        'Shopify, Liquid, Javascript, SCSS',
+        false,
+        false,
+        2024,
+        'https://baobabcollection.com/',
+    ),
+]
+
+console.log(projects);
