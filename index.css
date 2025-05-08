@@ -311,3 +311,51 @@ section {
     padding: 2rem;
     padding-bottom: 4rem;
 }
+
+.whoami {
+    h2.h1 {
+        margin-bottom: 3rem;
+    }
+    .whoami-content {
+        overflow: hidden;
+        width: 100%;
+        max-width: 75ch;
+    }
+    .track {
+        display: grid;
+        grid-template-columns: repeat(3, 100%);
+        gap: 2rem;
+        cursor: pointer;
+        margin-bottom: 1rem;
+        
+
+        > div {
+            width: 100%;
+            align-content: center;
+            height: auto;
+            user-select: none;
+        }
+    }
+
+    .bullets {
+        padding-inline: .25rem;
+        height: .15rem;
+        background-color: var(--neutral-200);
+        border-radius: 1rem;
+        position: relative;
+        width: 100%;
+        max-width: 75ch;
+        
+
+        .bullet {
+            width: calc(100% / 3);
+            background-color: var(--neutral-700);
+            height: 100%;
+            border-radius: 1rem;
+            position: absolute;
+            top: 0;
+            left: 0;
+            transition: 0.5s ease-in;
+        }
+    }
+}
