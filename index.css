@@ -183,6 +183,10 @@ a {
     text-decoration: none;
     color: var(--neutral-700);
     display: block;
+
+    &.inline {
+        display: inline-block;
+    }
 }
 
 h1,
@@ -360,6 +364,36 @@ section {
             top: 0;
             left: 0;
             transition: 0.5s ease-in;
+        }
+    }
+}
+
+.projects {
+
+    .title {
+        margin-bottom: 3rem;
+
+        h2.h1 {
+            margin-bottom: 1.5rem;
+        }
+        
+    }
+
+    
+    .projects-content {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 2rem;
+
+        .project {
+            margin-bottom: 2rem;
+            background: var(--neutral-100);
+            padding: 1rem;;
+        }
+
+        .project-image {
+            width: 100%;
+            
         }
     }
 }

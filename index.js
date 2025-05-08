@@ -180,7 +180,7 @@ const projects = [
     new Project(
         'Tailwind Colors',
         'A collection of Tailwind CSS color tokens exported in HEX, RGBA, and OKLCH — ready to use with CSS, SCSS, LESS, and Stylus. 🎨 Perfect for designers & developers who want access to Tailwind’s palette in different workflows.',
-        'image2.jpg',
+        null,
         'video2.mp4',
         'Node.js, Javascript',
         true,
@@ -224,7 +224,7 @@ const projects = [
     new Project(
         'Obrist',
         'Wine reseller and distributor in Switzerland. I created a custom e-commerce website for them using Shopify and by creating a custom theme with Liquid.',
-        'imgs\obrist.png',
+        'imgs/obrist.png',
         null,
         'Shopify, Liquid, Javascript, SCSS',
         false,
@@ -235,7 +235,7 @@ const projects = [
     new Project(
         'Baobab Collection',
         'Baobab Collection is a luxury home fragrance brand. I created a custom e-commerce website for them using Shopify and by creating a custom theme with Liquid.',
-        'imgs\baobab.png',
+        'imgs/baobab.png',
         null,
         'Shopify, Liquid, Javascript, SCSS',
         false,
@@ -246,3 +246,47 @@ const projects = [
 ]
 
 console.log(projects);
+
+const projectsContent = document.querySelector('.projects-content');
+let col1 = document.querySelector('.col-1');
+let col2 = document.querySelector('.col-2');
+
+let previousCol = col2;
+function createProjectCard(project) {
+    let template = document.querySelector('template');
+    let clone = document.importNode(template.content, true);
+    let card = clone.querySelector('.project');
+    let img = clone.querySelector('.project-image');
+    let title = clone.querySelector('.project-title');
+    let description = clone.querySelector('.project-description');
+
+    if(project.image) {
+        console.log(project.image);
+        img.src = project.image;
+        img.alt = project.name;
+    }
+    else {
+        img.remove();
+    }
+
+    title.innerText = project.name;
+    description.innerText = project.description;
+
+    if(previousCol === col1) {
+        col2.appendChild(card);
+        previousCol = col2;
+    }
+    else {
+        col1.appendChild(card);
+        previousCol = col1;
+    }
+
+}
+
+function createProjectCards(projects) {
+    projects.forEach((project) => {
+        createProjectCard(project);
+    });
+}
+
+createProjectCards(projects);
