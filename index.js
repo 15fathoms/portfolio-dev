@@ -289,70 +289,77 @@ function createProjectCard(project) {
 
     if (githubPageLinks) {
         let githubPageLink = document.createElement('a');
+        let span = document.createElement('span');
         githubPageLink.href = githubPageLinks;
         githubPageLink.target = '_blank';
-        githubPageLink.innerText = 'Website';
+        span.innerText = 'Website';
         githubPageLink.classList.add('website-link');
-        let logo = document.createElement('img');
-        logo.src = 'imgs/github.svg';
-        logo.alt = 'GitHub Logo';
+        let logo = document.createElement('i');
+        logo.classList.add('fa', 'fa-brands', 'fa-github');
         logo.classList.add('github-logo');
         githubPageLink.prepend(logo);
+        githubPageLink.appendChild(span);
         links.appendChild(githubPageLink);
     }
 
     if (repo) {
         let repoLink = document.createElement('a');
+        let span = document.createElement('span');
+        span.innerText = 'Repository';
         repoLink.href = repo;
         repoLink.target = '_blank';
-        repoLink.innerText = 'Repository';
         repoLink.classList.add('repo-link');
-        let logo = document.createElement('img');
-        logo.src = 'imgs/github.svg';
-        logo.alt = 'GitHub Logo';
+        let logo = document.createElement('i');
+        logo.classList.add('fa', 'fa-brands', 'fa-github');
         logo.classList.add('github-logo');
         repoLink.prepend(logo);
+        repoLink.appendChild(span);
         links.appendChild(repoLink);
     }
 
     if (prLink) {
         let prLinkElement = document.createElement('a');
+        let span = document.createElement('span');
+        span.innerText = 'Pull Request';
         prLinkElement.href = prLink;
         prLinkElement.target = '_blank';
-        prLinkElement.innerText = 'Pull Request';
         prLinkElement.classList.add('pr-link');
-        let logo = document.createElement('img');
-        logo.src = 'imgs/github.svg';
-        logo.alt = 'GitHub Logo';
+        let logo = document.createElement('i');
+        logo.classList.add('fa', 'fa-brands', 'fa-github');
         logo.classList.add('github-logo');
         prLinkElement.prepend(logo);
+        prLinkElement.appendChild(span);
         links.appendChild(prLinkElement);
     }
 
     if (npmLinks) {
         let npmLink = document.createElement('a');
+        let span = document.createElement('span');
         npmLink.href = npmLinks;
         npmLink.target = '_blank';
-        npmLink.innerText = 'NPM';
+        span.innerText = 'NPM';
         npmLink.classList.add('npm-link');
         let logo = document.createElement('img');
         logo.src = 'https://upload.wikimedia.org/wikipedia/commons/thumb/d/db/Npm-logo.svg/330px-Npm-logo.svg.png';
         logo.alt = 'NPM Logo';
         logo.classList.add('npm-logo');
         npmLink.prepend(logo);
+        npmLink.appendChild(span);
         links.appendChild(npmLink);
     }
 
     if (websiteLinks) {
         let websiteLink = document.createElement('a');
+        let span = document.createElement('span');
         websiteLink.href = websiteLinks;
         websiteLink.target = '_blank';
-        websiteLink.innerText = 'Website';
+        span.innerText = 'Website';
         websiteLink.classList.add('website-link');
         let logo = document.createElement('i');
         logo.classList.add('fa', 'fa-solid', 'fa-globe');
         logo.classList.add('website-logo');
         websiteLink.prepend(logo);
+        websiteLink.appendChild(span);
         links.appendChild(websiteLink);
     }
 

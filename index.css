@@ -242,8 +242,8 @@ section {
 
     @media screen and (min-width: 768px) {
         min-height: 100vh;
-        padding-top: 0;
-        padding-bottom: 0;
+        padding-top: 4rem;
+        padding-bottom: 4rem;
     }
 }
 
@@ -410,7 +410,7 @@ section {
 }
 
 .projects {
-
+    background-color: var(--neutral-100);
     .title {
         margin-bottom: 3rem;
 
@@ -435,8 +435,42 @@ section {
         }
 
         .project {
-            background: var(--neutral-100);
             padding: 1rem;
+            position: relative;
+            border-left: .2rem solid var(--neutral-700);
+            background-color: var(--neutral-50);
+
+            &:before {
+                content: '';
+                position: absolute;
+                top: 0;
+                left: -.2rem;
+                width: .2rem;
+                height: 100%; 
+                background-color: var(--neutral-900);
+                transition: .25s;
+            }
+
+            &:hover:before{
+                width: calc(100% + .2rem);
+            }
+
+            .project-image, .project-title, .project-description, span, img {
+                position: relative;
+                z-index: 1;
+            }
+
+            h3, p, span, i{
+                display: block;
+                background: var(--neutral-100);
+                color: var(--neutral-700);
+                mix-blend-mode: difference;
+                background-clip: text;
+                -webkit-background-clip: text;
+                -webkit-text-fill-color: transparent;
+                text-fill-color: transparent;
+            }
+            
 
             .project-links{
                 gap: 1rem;
