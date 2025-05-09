@@ -10,6 +10,27 @@ function raf(time) {
 
 requestAnimationFrame(raf);
 
+// function splitText(selector) {
+//     const element = document.querySelector(selector);
+//     const text = element.innerText;
+//     const chars = [...text].map((char, index) => {
+//         const span = document.createElement("span");
+//         span.classList.add("char");
+//         span.style.setProperty("--order", index);
+//         if (char === " ") {
+//             char = "&nbsp;"; // Use non-breaking space for spaces
+//         }
+//         span.innerHTML = char;
+//         element.appendChild(span);
+//         return span;
+//     });
+//     element.innerText = ""; // Clear the original text
+//     for(let i = 0; i < chars.length; i++) {
+//         element.appendChild(chars[i]);
+//     }
+// }
+
+// const { chars } = splitText("h1");
 
 
 
@@ -160,8 +181,6 @@ class Project {
         this.asContributor = asContributor;
         this.year = year ? year : null;
         this.links = links?.split(',').map((item) => item.trim()) || links;
-        this.github = this.links.find((link) => link.includes('github.com'));
-        this.npm = this.links.find((link) => link.includes('npmjs.com'));
     }
 }
 
@@ -241,7 +260,7 @@ const projects = [
         false,
         false,
         2024,
-        'https://baobabcollection.com/',
+        'https://eu.baobabcollection.com/',
     ),
 ]
 
@@ -259,9 +278,87 @@ function createProjectCard(project) {
     let img = clone.querySelector('.project-image');
     let title = clone.querySelector('.project-title');
     let description = clone.querySelector('.project-description');
+    let links = clone.querySelector('.project-links');
+    let githubLinks = project.links.filter(link => link.includes('github'));
+
+    let npmLinks = project.links.find(link => link.includes('npm'));
+    let githubPageLinks = githubLinks.find(link => link.startsWith('https://15fathoms.github.io/'));
+    let websiteLinks = project.links.find(link => link.includes('https://') && !link.includes('github') && !link.includes('npm'));
+    let prLink = githubLinks.find(link => link.includes('pull'));
+    let repo = githubLinks.find(link => link.startsWith('https://github.com/15fathoms/'));
+
+    if (githubPageLinks) {
+        let githubPageLink = document.createElement('a');
+        githubPageLink.href = githubPageLinks;
+        githubPageLink.target = '_blank';
+        githubPageLink.innerText = 'Website';
+        githubPageLink.classList.add('website-link');
+        let logo = document.createElement('img');
+        logo.src = 'imgs/github.svg';
+        logo.alt = 'GitHub Logo';
+        logo.classList.add('github-logo');
+        githubPageLink.prepend(logo);
+        links.appendChild(githubPageLink);
+    }
+
+    if (repo) {
+        let repoLink = document.createElement('a');
+        repoLink.href = repo;
+        repoLink.target = '_blank';
+        repoLink.innerText = 'Repository';
+        repoLink.classList.add('repo-link');
+        let logo = document.createElement('img');
+        logo.src = 'imgs/github.svg';
+        logo.alt = 'GitHub Logo';
+        logo.classList.add('github-logo');
+        repoLink.prepend(logo);
+        links.appendChild(repoLink);
+    }
+
+    if (prLink) {
+        let prLinkElement = document.createElement('a');
+        prLinkElement.href = prLink;
+        prLinkElement.target = '_blank';
+        prLinkElement.innerText = 'Pull Request';
+        prLinkElement.classList.add('pr-link');
+        let logo = document.createElement('img');
+        logo.src = 'imgs/github.svg';
+        logo.alt = 'GitHub Logo';
+        logo.classList.add('github-logo');
+        prLinkElement.prepend(logo);
+        links.appendChild(prLinkElement);
+    }
+
+    if (npmLinks) {
+        let npmLink = document.createElement('a');
+        npmLink.href = npmLinks;
+        npmLink.target = '_blank';
+        npmLink.innerText = 'NPM';
+        npmLink.classList.add('npm-link');
+        let logo = document.createElement('img');
+        logo.src = 'https://upload.wikimedia.org/wikipedia/commons/thumb/d/db/Npm-logo.svg/330px-Npm-logo.svg.png';
+        logo.alt = 'NPM Logo';
+        logo.classList.add('npm-logo');
+        npmLink.prepend(logo);
+        links.appendChild(npmLink);
+    }
+
+    if (websiteLinks) {
+        let websiteLink = document.createElement('a');
+        websiteLink.href = websiteLinks;
+        websiteLink.target = '_blank';
+        websiteLink.innerText = 'Website';
+        websiteLink.classList.add('website-link');
+        let logo = document.createElement('i');
+        logo.classList.add('fa', 'fa-solid', 'fa-globe');
+        logo.classList.add('website-logo');
+        websiteLink.prepend(logo);
+        links.appendChild(websiteLink);
+    }
+
+
 
     if(project.image) {
-        console.log(project.image);
         img.src = project.image;
         img.alt = project.name;
     }
